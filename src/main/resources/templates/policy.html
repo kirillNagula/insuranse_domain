@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Policy</title>
+</head>
+<body>
+
+<a href="/home">Main page</a>
+    <br>
+    <br>
+    <br>
+<H2>Add new policy</H2>
+
+<form th:action="@{/home/policy}" method="post" th:object="${userPolicy}">
+<div> First Name: <input type="text" min="3" th:field="*{firstName}"></div>
+<div> Last Name: <input type="text" min="3" th:field="*{lastName}"></div>
+<div> Insurance type: <select  th:field="*{insuranceType}">
+    <option value="COMPLEX">Complex insurance</option>
+    <option value="DAMAGE">Damage insurance</option>
+    <option value="FIRE">Fire insurance</option>
+</select></div>
+<div> Your property: <select  th:field="*{typeOfProperty}">
+    <option value="CAR">Car</option>
+    <option value="FLAT">Flat</option>
+    <option value="HOUSE">House</option>
+    <option value="SHIP">Ship</option>
+    <option value="MOTORCYCLE">Moto</option>
+</select></div></div>
+    <br>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>

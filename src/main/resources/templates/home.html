@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+
+<a href="/home/policy">Add new Policy</a>
+<br>
+<br>
+<br>
+<br>
+
+<H2>Enter your personal data</H2>
+<form th:action="@{/home}" method="post" th:object="${userData}">
+    <div> First Name: <input type="text" min="3" max="20" th:field="*{firstName}"></div>
+    <div>Last Name:<input type="text" min="3" max="20" th:field="*{lastName}"></div>
+    <br>
+    <button type="submit">Search</button>
+</form>
+
+</body>
+</html>
